@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="http://benkolb.github.io/favicon.ico">
+<link rel="stylesheet" type="text/css" media="screen"
+      href="http://benkolb.github.io/general.css">
+<script type="text/javascript" src="C://Users/Benedikt/Documents/GitHub/timeseries/jquery.csvToTable.js"></script>
+<script type="text/javascript" src="C://Users/Benedikt/Documents/GitHub/timeseries/jquery-1.4.2.min.js"></script>
+<script>
+	$(function() {
+		$.get('test.csv', function(data) {
+			$('#CSVSource').html('<pre>' + data + '</pre>');
+		});
+		$('#CSVTable').CSVToTable('test.csv', { loadingImage: 'images/loading.gif', startLine: 0 });
+		$.get('test.tsv', function(data) {
+			$('#TSVSource').html('<pre>' + data + '</pre>');
+		});
+		$('#CSVTable2').CSVToTable('test.csv', { loadingImage: 'images/loading.gif', startLine: 1, headers: ['Album Title', 'Artist Name', 'Price ($USD)'] }).bind("loadComplete",function() { 
+			$('#CSVTable2').find('TABLE').tablesorter();
+		});;
+	});
+	</script>
+<title>BK Time Series</title>
+</head>
+
+<body>
+<h1>Time Series</h1>
+<table width="100%" border="0">
+<tr>
+<td class="sidebar" width="15%"> 
+<br /><br />
+<br /><br />
+<a href="http://benkolb.github.io/" style="color: white; text-decoration: none; font-size: 120%">Home</a>
+<br /><br />
+<a href="http://benkolb.github.io/timeseries/" style="color: white; text-decoration: none; font-size: 120%">Time series</a>
+<br /><br />
+<a href="http://benkolb.github.io/codes/" style="color: white; text-decoration: none; font-size: 120%">Codes</a>
+<br /><br />
+<a href="http://benkolb.github.io/quotes/" style="color: white; text-decoration: none; font-size: 120%">Quotes</a>
+<br /><br />
+<a href="http://benkolb.github.io/xkcd/"style="color: white; text-decoration: none; font-size: 120%">A Primer in Metrics with xkcd.com</a>
+</td>
+<td class="body">
+<br />
+<p>Some macroeconomic time series I have used in the past. [t.b.d.]</p>
+
+<div id="CSVTable"></div>
+
+</td>
+</tr>
+</table>
+</body>
+</html>

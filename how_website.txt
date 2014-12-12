@@ -1,0 +1,19 @@
+How I created this website
+
+1. Set up homepage with github pages
+- follow tutorial on github
+https://pages.github.com/
+Main steps: 
+- create repository (repo) with the name username.github.io
+- I use the "github for windows" programme (select folder on hard disk and publish)
+- put an index.html file into the folder and commit
+Notes and problems encountered:
+- Wait some time! Github says it might need up to 10 minutes, and these feel even longer when constantly refreshing the browser...
+- Publish the repository BEFORE you add the index.html!
+- After error suggesting you debug the state of your repo, just delete the hidden .git folder!
+
+2. use some basic html
+http://www.w3.org/MarkUp/Guide/
+
+3. to include a symbol on the browser bar ("favicon")
+http://www.w3.org/2005/10/howto-favicon

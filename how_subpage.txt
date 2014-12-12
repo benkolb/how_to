@@ -1,0 +1,11 @@
+how to create a new subpage (e.g. ".../codes")
+1. create new repository on github
+2. refer simply to the username.github.io folder on desktop. Github should create a subfolder with the same name as the repo. Then commit some file in there (e.g. an index.html file for this subpage).
+[3. Add a readme file if you want.]
+
+route I: manually create gh-pages
+route II: with preset layouts by github 
+4. Go to "Settings" and "Automatic Page Generator".
+5. Follow http://www.hongkiat.com/blog/create-github-page/
+[6. If you want to go back to layouting by index.html: Delete all the files added by github manually (and replace github's index.html with your own). The theme "Minimal" seems to minimise the amount of files you have to delete manually.
+6. Give github some minute(s) to activate your changes.
