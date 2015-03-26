@@ -1,0 +1,217 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{libertine}
+\frenchspacing
+
+
+%% to avoid $-issue when loading math from .csv
+\usepackage{array}
+\usepackage{amsmath}
+
+
+%% my original settings for using bibtex
+\usepackage{url}
+\usepackage[authordate, natbib, backend=biber, url=false]{biblatex-chicago}
+\addbibresource{c:/Users/Benedikt/Desktop/research/lit.bib}
+
+
+%% box settings
+\usepackage{relsize}
+\newcommand{\+}{\raisebox{1.5pt}{\smaller{+}}}
+
+
+% Nicer margin notes (left and smaller font)
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]
+{\-\oldmarginpar[\raggedleft\sffamily\scriptsize #1]%
+{\raggedright\sffamily\scriptsize #1}}
+\reversemarginpar
+
+
+%% all the following for automated tables
+\usepackage{csvsimple}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.7}
+\pgfkeysifdefined{/pgfplots/table/output empty row/.@cmd}{
+    % upcoming releases offer this more convenient option:
+    \pgfplotstableset{
+        empty header/.style={
+          every head row/.style={output empty row},
+        }
+    }
+}
+
+
+%% professional tables
+\usepackage{booktabs}
+\let\hline\midrule
+
+
+% against scientific format in matlab2tikz figures
+\pgfplotsset{x tick label style={/pgf/number format/fixed}}
+\pgfplotsset{y tick label style={/pgf/number format/fixed}} 
+% suppresses 1000 separator
+\pgfplotsset{x tick label style={/pgf/number format/1000 sep=}}
+
+
+% Nice hyperreferences (no neon boxes) - UNCOMMENT IFF HYPERREFS INCLUDED!
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks, linkcolor={red!50!black}, citecolor={blue!50!black}, urlcolor={green!50!black}}
+\end_preamble
+\use_default_options true
+\begin_modules
+biblatex
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package auto
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 2
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Itemize
+Cross-references in Lyx: Imagine you derive an equation that was stated
+ and referenced (and labelled 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family typewriter
+EQNNUMBER
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+) before.
+ To give the equation the same number as the one above, insert the following:
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\backslash
+tag{
+\backslash
+ensuremath{
+\backslash
+eqref{eq:EQNNUMBER}}}
+\begin_inset Newline newline
+\end_inset
+
+
+\family default
+For example:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+1+1=2\label{eq:a}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+1+1=2\tag{\ensuremath{\ref{eq:a}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Against "in:" in reference section: add the command
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\backslash
+renewbibmacro{in:}{}
+\family default
+
+\begin_inset Newline newline
+\end_inset
+
+to the preamble.
+\end_layout
+
+\end_body
+\end_document
